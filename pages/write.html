@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Write — HEXBREACH</title>
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/editor.css">
+</head>
+<body>
+
+  <div id="header-placeholder"></div>
+
+  <main class="write-page">
+    <div class="container">
+
+      <div class="section-label" style="margin-bottom:2rem;">// New Post</div>
+
+      <div class="write-page-layout">
+
+        <!-- EDITOR PANEL -->
+        <div>
+          <!-- Toolbar -->
+          <div class="editor-toolbar">
+            <button class="toolbar-btn" data-action="h2">H2</button>
+            <button class="toolbar-btn" data-action="h3">H3</button>
+            <div class="toolbar-sep"></div>
+            <button class="toolbar-btn" data-action="bold"><strong>B</strong></button>
+            <button class="toolbar-btn" data-action="italic"><em>I</em></button>
+            <div class="toolbar-sep"></div>
+            <button class="toolbar-btn" data-action="code">Code</button>
+            <button class="toolbar-btn" data-action="codeblock">Block</button>
+            <div class="toolbar-sep"></div>
+            <button class="toolbar-btn" data-action="link">Link</button>
+            <button class="toolbar-btn" data-action="blockquote">Quote</button>
+            <button class="toolbar-btn" data-action="list">List</button>
+            <button class="toolbar-btn" data-action="hr">HR</button>
+            <div class="toolbar-sep"></div>
+            <button class="toolbar-btn" id="btn-preview" onclick="togglePreview()">Preview</button>
+          </div>
+
+          <!-- Editor area -->
+          <div class="editor-area">
+            <input
+              type="text"
+              class="title-input"
+              id="post-title"
+              placeholder="Post title — e.g. CVE-2025-XXXX: Full Exploitation Walkthrough"
+            >
+            <textarea
+              class="body-textarea"
+              id="post-body"
+              placeholder="## Summary&#10;&#10;Write your research here. Supports Markdown.&#10;&#10;```python&#10;# Paste your PoC code&#10;def exploit(target, port):&#10;    ...&#10;```&#10;&#10;## Technical Details&#10;&#10;..."></textarea>
+            <!-- Preview pane (hidden by default) -->
+            <div id="post-preview" style="display:none;padding:1.5rem;font-size:0.9rem;color:var(--text);line-height:1.8;min-height:520px;"></div>
+          </div>
+
+          <!-- Footer bar -->
+          <div class="editor-footer">
+            <span class="status-ok" id="editor-status">● READY</span>
+            <span id="word-count">0 words</span>
+            <span id="char-count">0 chars</span>
+            <span>Markdown</span>
+            <span>UTF-8</span>
+          </div>
+        </div>
+
+        <!-- META SIDEBAR -->
+        <aside class="meta-sidebar">
+
+          <div class="meta-panel">
+            <h4>// Publish</h4>
+            <div class="publish-btns">
+              <button class="btn-primary" id="btn-publish" onclick="publishPost()">Publish Post</button>
+              <button class="btn-ghost"   id="btn-save-draft" onclick="saveDraft()">Save Draft</button>
+            </div>
+          </div>
+
+          <div class="meta-panel">
+            <h4>// Post Meta</h4>
+
+            <div class="meta-field">
+              <label for="post-category">Category</label>
+              <select id="post-category">
+                <option value="">-- select --</option>
+                <option>Exploit Development</option>
+                <option>Malware Analysis</option>
+                <option>Penetration Testing</option>
+                <option>Blue Team / Defense</option>
+                <option>OSINT &amp; Recon</option>
+                <option>Cloud Security</option>
+                <option>Cryptography</option>
+                <option>CTF Writeup</option>
+              </select>
+            </div>
+
+            <div class="meta-field">
+              <label for="post-severity">Severity</label>
+              <select id="post-severity">
+                <option value="">-- n/a --</option>
+                <option>Informational</option>
+                <option>Low</option>
+                <option>Medium</option>
+                <option>High</option>
+                <option>Critical</option>
+              </select>
+            </div>
+
+            <div class="meta-field">
+              <label for="post-cve">CVE Reference</label>
+              <input type="text" id="post-cve" placeholder="CVE-2025-XXXXX">
+            </div>
+
+            <div class="meta-field">
+              <label for="post-tags">Tags (comma-separated)</label>
+              <input type="text" id="post-tags" placeholder="kernel, heap, PoC, Linux">
+            </div>
+          </div>
+
+          <div class="meta-panel">
+            <h4>// Markdown Guide</h4>
+            <div style="display:flex;flex-direction:column;gap:0.4rem;">
+              <div class="editor-line" style="font-size:0.7rem;"><span class="cmt">## Heading 2</span></div>
+              <div class="editor-line" style="font-size:0.7rem;"><span class="str">**bold**</span><span style="color:var(--text-dim);"> / </span><span class="kw">_italic_</span></div>
+              <div class="editor-line" style="font-size:0.7rem;"><span class="fn">`inline code`</span></div>
+              <div class="editor-line" style="font-size:0.7rem;"><span class="cmt">```python</span></div>
+              <div class="editor-line" style="font-size:0.7rem;"><span class="str">[link](url)</span></div>
+              <div class="editor-line" style="font-size:0.7rem;"><span class="kw">&gt; blockquote</span></div>
+              <div class="editor-line" style="font-size:0.7rem;"><span class="cmt">- list item</span></div>
+              <div class="editor-line" style="font-size:0.7rem;"><span class="str">---</span><span style="color:var(--text-dim);margin-left:0.5rem;">horizontal rule</span></div>
+            </div>
+          </div>
+
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="../js/layout.js"></script>
+  <script src="../js/write.js"></script>
+</body>
+</html>

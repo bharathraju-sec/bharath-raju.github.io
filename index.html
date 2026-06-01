@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HEXBREACH — Cybersecurity blog for researchers, red teamers, and threat intelligence analysts.">
+  <title>HEXBREACH — Cybersecurity Intelligence Blog</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/editor.css">
+</head>
+<body>
+
+  <div id="header-placeholder"></div>
+
+  <!-- ══════════════════════════ HERO ══════════════════════════ -->
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-content">
+      <div class="hero-tag">Cybersecurity Intelligence Platform</div>
+      <div class="terminal-line">
+        <span class="prompt">root@hexbreach:~$ </span>
+        <span class="typewriter">./start_blog --mode=stealth --encrypt=yes</span>
+      </div>
+      <h1>Write. Exploit.<br><span class="highlight">Educate.</span> <span class="red">Defend.</span></h1>
+      <p class="hero-desc">A platform for security researchers, red teamers, and threat intelligence analysts to publish findings, share tools, and document the bleeding edge.</p>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="openEditor()">Write New Post</button>
+        <a href="pages/blog.html" class="btn-ghost">Read Latest</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ STATS ══════════════════════════ -->
+  <section class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item"><span class="stat-num">2,847</span><span class="stat-label">Articles Published</span></div>
+        <div class="stat-item"><span class="stat-num">1,203</span><span class="stat-label">Active Authors</span></div>
+        <div class="stat-item"><span class="stat-num">94K</span><span class="stat-label">Monthly Readers</span></div>
+        <div class="stat-item"><span class="stat-num">312</span><span class="stat-label">CVEs Documented</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ FEATURED ══════════════════════════ -->
+  <section class="featured-section">
+    <div class="container">
+      <div class="section-label">// Featured Research</div>
+      <div class="featured-card">
+        <div class="featured-visual">
+          <svg width="320" height="240" viewBox="0 0 320 240" fill="none" aria-hidden="true">
+            <line x1="40"  y1="120" x2="280" y2="120" stroke="#0d2a3a" stroke-width="1"/>
+            <line x1="160" y1="40"  x2="160" y2="200" stroke="#0d2a3a" stroke-width="1"/>
+            <circle cx="160" cy="120" r="60" stroke="#00ffe5" stroke-width="1" opacity="0.3"/>
+            <circle cx="160" cy="120" r="40" stroke="#00ffe5" stroke-width="1" opacity="0.2"/>
+            <circle cx="160" cy="120" r="20" stroke="#00ffe5" stroke-width="1" opacity="0.4"/>
+            <circle cx="160" cy="120" r="4"  fill="#00ffe5" opacity="0.8"/>
+            <rect x="150" y="112" width="20" height="16" rx="2" stroke="#00ffe5" stroke-width="1.5" fill="none" opacity="0.7"/>
+            <path d="M153 112 v-4 a7 7 0 0 1 14 0 v4" stroke="#00ffe5" stroke-width="1.5" fill="none" opacity="0.7"/>
+            <circle cx="80"  cy="60"  r="5" fill="#ff003c" opacity="0.6"/>
+            <circle cx="240" cy="60"  r="5" fill="#00b8ff" opacity="0.6"/>
+            <circle cx="80"  cy="180" r="5" fill="#00b8ff" opacity="0.6"/>
+            <circle cx="240" cy="180" r="5" fill="#ff003c" opacity="0.6"/>
+            <line x1="80"  y1="60"  x2="120" y2="90"  stroke="#ff003c" stroke-width="0.5" opacity="0.4"/>
+            <line x1="240" y1="60"  x2="200" y2="90"  stroke="#00b8ff" stroke-width="0.5" opacity="0.4"/>
+            <line x1="80"  y1="180" x2="120" y2="150" stroke="#00b8ff" stroke-width="0.5" opacity="0.4"/>
+            <line x1="240" y1="180" x2="200" y2="150" stroke="#ff003c" stroke-width="0.5" opacity="0.4"/>
+            <circle cx="160" cy="120" r="75" stroke="#00ffe5" stroke-width="0.5" opacity="0.1" stroke-dasharray="4 8">
+              <animateTransform attributeName="transform" type="rotate" from="0 160 120" to="360 160 120" dur="8s" repeatCount="indefinite"/>
+            </circle>
+            <text x="160" y="218" text-anchor="middle" fill="#0d3a4a" font-family="Share Tech Mono" font-size="9">THREAT ANALYSIS v2.1</text>
+          </svg>
+        </div>
+        <div class="featured-body">
+          <div>
+            <div class="post-meta">
+              <span class="post-tag tag-red">Zero-Day</span>
+              <span class="post-tag tag-cyan">CVE-2025-9341</span>
+              <span class="post-date">2025-05-28</span>
+            </div>
+            <h2>Critical RCE Vulnerability in OpenSSL 3.x — Anatomy of a Zero-Day</h2>
+            <p>A deep-dive analysis of a critical remote code execution vector discovered in OpenSSL's ASN.1 parsing routines. We cover the discovery process, PoC development, responsible disclosure timeline, and full mitigation strategies for affected systems.</p>
+          </div>
+          <div class="featured-footer">
+            <div class="post-meta">
+              <span class="post-tag tag-blue">~24 min read</span>
+              <span class="post-tag tag-red">Critical Severity</span>
+            </div>
+            <a href="pages/blog.html" class="read-link">Read Full Analysis</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ CATEGORIES ══════════════════════════ -->
+  <section class="categories-section">
+    <div class="container">
+      <div class="section-label">// Topics</div>
+      <div class="categories-grid">
+        <div class="cat-card"><span class="cat-icon">🔍</span><span class="cat-name">Recon</span></div>
+        <div class="cat-card"><span class="cat-icon">💥</span><span class="cat-name">Exploits</span></div>
+        <div class="cat-card"><span class="cat-icon">🛡️</span><span class="cat-name">Defense</span></div>
+        <div class="cat-card"><span class="cat-icon">🕵️</span><span class="cat-name">Malware</span></div>
+        <div class="cat-card"><span class="cat-icon">🔐</span><span class="cat-name">Crypto</span></div>
+        <div class="cat-card"><span class="cat-icon">☁️</span><span class="cat-name">Cloud</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ LATEST POSTS ══════════════════════════ -->
+  <section class="latest-section">
+    <div class="container">
+      <div class="section-label">// Latest Posts</div>
+      <div class="blog-grid">
+
+        <div class="blog-card">
+          <div class="card-number">// 001</div>
+          <div class="post-meta"><span class="post-tag tag-cyan">Pentesting</span><span class="post-date">2025-05-25</span></div>
+          <h3>Active Directory Lateral Movement via Kerberoasting in 2025</h3>
+          <p>Updated techniques for Kerberos ticket extraction, cracking strategies, and detection evasion in modern enterprise environments.</p>
+          <div class="card-footer"><span class="post-tag tag-blue">12 min</span><span class="arrow-btn">→</span></div>
+        </div>
+
+        <div class="blog-card">
+          <div class="card-number">// 002</div>
+          <div class="post-meta"><span class="post-tag tag-red">Malware</span><span class="post-date">2025-05-22</span></div>
+          <h3>Dissecting a Ransomware-as-a-Service Builder Leaked on the Dark Web</h3>
+          <p>Full static and dynamic analysis of leaked RaaS source code — architecture, encryption scheme, C2 protocol, and killswitch discovery.</p>
+          <div class="card-footer"><span class="post-tag tag-blue">18 min</span><span class="arrow-btn">→</span></div>
+        </div>
+
+        <div class="blog-card">
+          <div class="card-number">// 003</div>
+          <div class="post-meta"><span class="post-tag tag-cyan">OSINT</span><span class="post-date">2025-05-20</span></div>
+          <h3>Building an Automated Threat Intelligence Pipeline with Python</h3>
+          <p>Ingesting MISP feeds, correlating IOCs, and generating structured threat reports using open-source tooling and LLM augmentation.</p>
+          <div class="card-footer"><span class="post-tag tag-blue">9 min</span><span class="arrow-btn">→</span></div>
+        </div>
+
+        <div class="blog-card">
+          <div class="card-number">// 004</div>
+          <div class="post-meta"><span class="post-tag tag-blue">Cloud</span><span class="post-date">2025-05-18</span></div>
+          <h3>AWS IAM Privilege Escalation: 15 Attack Paths You Might Have Missed</h3>
+          <p>Misconfigured IAM roles, policy wildcards, and cross-account trust escalation with full remediation advice.</p>
+          <div class="card-footer"><span class="post-tag tag-blue">22 min</span><span class="arrow-btn">→</span></div>
+        </div>
+
+        <div class="blog-card">
+          <div class="card-number">// 005</div>
+          <div class="post-meta"><span class="post-tag tag-red">Exploit Dev</span><span class="post-date">2025-05-15</span></div>
+          <h3>Heap Grooming for Fun and Exploitation on Linux Kernel 6.x</h3>
+          <p>Modern heap feng shui techniques — spray strategies, UAF triggers, and ret2dir chaining for the current slab allocator.</p>
+          <div class="card-footer"><span class="post-tag tag-blue">31 min</span><span class="arrow-btn">→</span></div>
+        </div>
+
+        <div class="blog-card">
+          <div class="card-number">// 006</div>
+          <div class="post-meta"><span class="post-tag tag-cyan">Blue Team</span><span class="post-date">2025-05-12</span></div>
+          <h3>Sigma Rules Deep Dive: Detection Logic for Living-off-the-Land Attacks</h3>
+          <p>High-fidelity Sigma rules for LOLBAS techniques with minimal false positives — PowerShell to WMI abuse patterns.</p>
+          <div class="card-footer"><span class="post-tag tag-blue">14 min</span><span class="arrow-btn">→</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ WRITE PROMO ══════════════════════════ -->
+  <section class="write-section">
+    <div class="container">
+      <div class="write-layout">
+        <div class="write-info">
+          <div class="section-label">// For Authors</div>
+          <h2>Share Your<br>Research</h2>
+          <p>Whether you're documenting a CTF writeup, publishing a responsible disclosure, or sharing a new detection technique — HEXBREACH gives you a terminal-grade writing environment built for technical depth.</p>
+          <ul class="feature-list">
+            <li>Markdown + code block support with syntax highlighting</li>
+            <li>Embedded terminal output &amp; PoC code snippets</li>
+            <li>CVE &amp; CWE tagging system</li>
+            <li>Auto-save draft to local storage</li>
+            <li>Anonymous publishing option</li>
+          </ul>
+          <a href="pages/write.html" class="btn-primary">Open Editor</a>
+        </div>
+        <div class="editor-mock">
+          <div class="editor-topbar">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+            <span class="editor-title">new_post.md — HEXBREACH Editor</span>
+          </div>
+          <div class="editor-body">
+            <div class="editor-line"><span class="line-num">1</span><span class="line-content"><span class="kw">---</span></span></div>
+            <div class="editor-line"><span class="line-num">2</span><span class="line-content">title: <span class="str">"Your Research Title"</span></span></div>
+            <div class="editor-line"><span class="line-num">3</span><span class="line-content">tags: <span class="str">[exploit, CVE-2025-XXXX]</span></span></div>
+            <div class="editor-line"><span class="line-num">4</span><span class="line-content">severity: <span class="str">critical</span></span></div>
+            <div class="editor-line"><span class="line-num">5</span><span class="line-content"><span class="kw">---</span></span></div>
+            <div class="editor-line"><span class="line-num">6</span><span class="line-content"></span></div>
+            <div class="editor-line"><span class="line-num">7</span><span class="line-content"><span class="cmt">## Overview</span></span></div>
+            <div class="editor-line"><span class="line-num">8</span><span class="line-content"></span></div>
+            <div class="editor-line"><span class="line-num">9</span><span class="line-content">During a routine pentest of...</span></div>
+            <div class="editor-line"><span class="line-num">10</span><span class="line-content"></span></div>
+            <div class="editor-line"><span class="line-num">11</span><span class="line-content"><span class="cmt">```python</span></span></div>
+            <div class="editor-line"><span class="line-num">12</span><span class="line-content"><span class="fn">def</span> exploit(target):</span></div>
+            <div class="editor-line"><span class="line-num">13</span><span class="line-content">&nbsp;&nbsp;&nbsp;&nbsp;<span class="cmt"># payload construction</span></span></div>
+            <div class="editor-line"><span class="line-num">14</span><span class="line-content">&nbsp;&nbsp;&nbsp;&nbsp;payload = <span class="str">b'\x41' * 256</span><span class="editor-cursor"></span></span></div>
+          </div>
+          <div class="status-bar">
+            <span class="status-ok">● SECURE</span>
+            <span>ln 14, col 36</span>
+            <span>markdown</span>
+            <span>UTF-8</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ NEWSLETTER ══════════════════════════ -->
+  <section class="newsletter-section">
+    <div class="container">
+      <div class="newsletter-inner">
+        <div class="section-label" style="justify-content:center;margin-bottom:1.5rem;">// Intelligence Feed</div>
+        <h2>SUBSCRIBE TO THE FEED</h2>
+        <p>Weekly digest of critical CVEs, new research, and threat intelligence. Encrypted. No tracking.</p>
+        <div class="subscribe-form">
+          <input type="email" placeholder="operator@domain.tld">
+          <button type="button">Subscribe</button>
+        </div>
+        <p class="warning-text">We use <span>PGP-signed</span> confirmation emails. Zero analytics. Unsubscribe anytime.</p>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+  <!-- ══════════════════════════ QUICK WRITE MODAL ══════════════════════════ -->
+  <div class="modal-overlay" id="editorModal">
+    <div class="modal">
+      <div class="modal-header">
+        <span class="modal-title">// new_post.md — Quick Write</span>
+        <button class="modal-close" onclick="closeEditor()">[ ESC ]</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Post Title</label>
+            <input type="text" placeholder="e.g. RCE in OpenSSL 3.x via ASN.1 Parser">
+          </div>
+          <div class="form-group">
+            <label>Category</label>
+            <select>
+              <option value="">-- select category --</option>
+              <option>Exploit Development</option>
+              <option>Malware Analysis</option>
+              <option>Penetration Testing</option>
+              <option>Blue Team / Defense</option>
+              <option>OSINT &amp; Recon</option>
+              <option>Cloud Security</option>
+              <option>Cryptography</option>
+              <option>CTF Writeup</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>CVE Reference (optional)</label>
+            <input type="text" placeholder="e.g. CVE-2025-12345">
+          </div>
+          <div class="form-group">
+            <label>Severity</label>
+            <select>
+              <option>Informational</option>
+              <option>Low</option>
+              <option>Medium</option>
+              <option>High</option>
+              <option>Critical</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Tags (comma-separated)</label>
+          <input type="text" placeholder="e.g. heap overflow, kernel, PoC, Linux">
+        </div>
+        <div class="form-group">
+          <label>Article Body (Markdown supported)</label>
+          <textarea placeholder="## Summary&#10;&#10;Describe your findings here...&#10;&#10;```python&#10;# PoC here&#10;```"></textarea>
+        </div>
+      </div>
+      <div class="status-bar" style="justify-content:space-between;">
+        <span class="status-ok">● DRAFT</span>
+        <span id="wc">0 words</span>
+        <span>SECURE CHANNEL</span>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-ghost" onclick="saveDraft()">Save Draft</button>
+        <button class="btn-primary" onclick="publishPost()">Publish Post</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/layout.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

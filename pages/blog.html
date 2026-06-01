@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — HEXBREACH</title>
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/blog.css">
+</head>
+<body>
+
+  <div id="header-placeholder"></div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <div class="section-label">// All Posts</div>
+      <h1>Research &amp;<br>Intelligence</h1>
+      <p>Browse community-published security research, exploit writeups, CTF solutions, and threat intelligence reports.</p>
+    </div>
+  </section>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar">
+    <div class="container">
+      <div class="filter-inner">
+        <span class="filter-label">Filter:</span>
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="exploit">Exploit Dev</button>
+        <button class="filter-btn" data-filter="malware">Malware</button>
+        <button class="filter-btn" data-filter="pentesting">Pentesting</button>
+        <button class="filter-btn" data-filter="blue team">Blue Team</button>
+        <button class="filter-btn" data-filter="osint">OSINT</button>
+        <button class="filter-btn" data-filter="cloud">Cloud</button>
+        <button class="filter-btn" data-filter="ctf">CTF</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- POSTS + SIDEBAR -->
+  <section class="posts-section">
+    <div class="container">
+      <div class="posts-layout">
+
+        <!-- POSTS LIST -->
+        <div class="posts-list">
+
+          <div class="post-row" data-category="exploit" data-tags="openssl rce zero-day PoC critical">
+            <div>
+              <div class="post-meta"><span class="post-tag tag-red">Zero-Day</span><span class="post-tag tag-cyan">CVE-2025-9341</span><span class="post-date">2025-05-28</span></div>
+              <h3>Critical RCE Vulnerability in OpenSSL 3.x — Anatomy of a Zero-Day</h3>
+              <p>A deep-dive analysis of a critical remote code execution vector discovered in OpenSSL's ASN.1 parsing routines, PoC development, and mitigation strategies.</p>
+              <div class="post-meta"><span class="post-tag tag-blue">24 min read</span><span class="post-tag tag-red">Critical</span></div>
+            </div>
+            <div class="post-row-right">
+              <span class="post-date">2025-05-28</span>
+              <span class="post-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="post-row" data-category="pentesting" data-tags="active directory kerberos lateral movement">
+            <div>
+              <div class="post-meta"><span class="post-tag tag-cyan">Pentesting</span><span class="post-date">2025-05-25</span></div>
+              <h3>Active Directory Lateral Movement via Kerberoasting in 2025</h3>
+              <p>Updated techniques for Kerberos ticket extraction, cracking strategies, and detection evasion in modern enterprise environments.</p>
+              <div class="post-meta"><span class="post-tag tag-blue">12 min read</span></div>
+            </div>
+            <div class="post-row-right">
+              <span class="post-date">2025-05-25</span>
+              <span class="post-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="post-row" data-category="malware" data-tags="ransomware raas c2 encryption reverse engineering">
+            <div>
+              <div class="post-meta"><span class="post-tag tag-red">Malware</span><span class="post-date">2025-05-22</span></div>
+              <h3>Dissecting a Ransomware-as-a-Service Builder Leaked on the Dark Web</h3>
+              <p>Full static and dynamic analysis of leaked RaaS source code — architecture, encryption scheme, C2 protocol, and killswitch discovery.</p>
+              <div class="post-meta"><span class="post-tag tag-blue">18 min read</span></div>
+            </div>
+            <div class="post-row-right">
+              <span class="post-date">2025-05-22</span>
+              <span class="post-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="post-row" data-category="osint" data-tags="osint threat intelligence misp python automation">
+            <div>
+              <div class="post-meta"><span class="post-tag tag-cyan">OSINT</span><span class="post-date">2025-05-20</span></div>
+              <h3>Building an Automated Threat Intelligence Pipeline with Python</h3>
+              <p>Ingesting MISP feeds, correlating IOCs, and generating structured threat reports using open-source tooling and LLM augmentation.</p>
+              <div class="post-meta"><span class="post-tag tag-blue">9 min read</span></div>
+            </div>
+            <div class="post-row-right">
+              <span class="post-date">2025-05-20</span>
+              <span class="post-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="post-row" data-category="cloud" data-tags="aws iam privilege escalation cloud security">
+            <div>
+              <div class="post-meta"><span class="post-tag tag-blue">Cloud</span><span class="post-date">2025-05-18</span></div>
+              <h3>AWS IAM Privilege Escalation: 15 Attack Paths You Might Have Missed</h3>
+              <p>Misconfigured IAM roles, policy wildcards, and cross-account trust escalation techniques with full remediation advice.</p>
+              <div class="post-meta"><span class="post-tag tag-blue">22 min read</span></div>
+            </div>
+            <div class="post-row-right">
+              <span class="post-date">2025-05-18</span>
+              <span class="post-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="post-row" data-category="exploit" data-tags="heap overflow kernel linux exploitation uaf">
+            <div>
+              <div class="post-meta"><span class="post-tag tag-red">Exploit Dev</span><span class="post-date">2025-05-15</span></div>
+              <h3>Heap Grooming for Fun and Exploitation on Linux Kernel 6.x</h3>
+              <p>Modern heap feng shui — spray strategies, UAF triggers, and ret2dir chaining for the current slab allocator.</p>
+              <div class="post-meta"><span class="post-tag tag-blue">31 min read</span><span class="post-tag tag-red">Advanced</span></div>
+            </div>
+            <div class="post-row-right">
+              <span class="post-date">2025-05-15</span>
+              <span class="post-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="post-row" data-category="blue team" data-tags="sigma siem detection lolbas powershell wmi">
+            <div>
+              <div class="post-meta"><span class="post-tag tag-cyan">Blue Team</span><span class="post-date">2025-05-12</span></div>
+              <h3>Sigma Rules Deep Dive: Detection Logic for Living-off-the-Land Attacks</h3>
+              <p>High-fidelity Sigma rules for LOLBAS techniques with minimal false positives — PowerShell to WMI abuse.</p>
+              <div class="post-meta"><span class="post-tag tag-blue">14 min read</span></div>
+            </div>
+            <div class="post-row-right">
+              <span class="post-date">2025-05-12</span>
+              <span class="post-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="post-row" data-category="ctf" data-tags="ctf web xss sqli writeup">
+            <div>
+              <div class="post-meta"><span class="post-tag tag-blue">CTF</span><span class="post-date">2025-05-08</span></div>
+              <h3>HackTheBox — Cascade: Full Walkthrough and Lessons Learned</h3>
+              <p>Complete walkthrough of the Cascade machine — LDAP enumeration, legacy .NET credential recovery, and AD recycle bin abuse.</p>
+              <div class="post-meta"><span class="post-tag tag-blue">19 min read</span></div>
+            </div>
+            <div class="post-row-right">
+              <span class="post-date">2025-05-08</span>
+              <span class="post-arrow">→</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside class="blog-sidebar">
+
+          <div class="sidebar-widget">
+            <h4>// Recent Posts</h4>
+            <div class="recent-list">
+              <div class="recent-item"><span class="recent-dot"></span><div><div class="recent-title">Critical RCE in OpenSSL 3.x</div><div class="recent-date">2025-05-28</div></div></div>
+              <div class="recent-item"><span class="recent-dot"></span><div><div class="recent-title">AD Lateral Movement via Kerberoasting</div><div class="recent-date">2025-05-25</div></div></div>
+              <div class="recent-item"><span class="recent-dot"></span><div><div class="recent-title">RaaS Builder Analysis</div><div class="recent-date">2025-05-22</div></div></div>
+              <div class="recent-item"><span class="recent-dot"></span><div><div class="recent-title">Threat Intel Pipeline with Python</div><div class="recent-date">2025-05-20</div></div></div>
+            </div>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>// Active CVEs</h4>
+            <div class="cve-list">
+              <div class="cve-item"><span class="cve-id">CVE-2025-9341</span><span class="cve-sev cve-crit">CRIT</span></div>
+              <div class="cve-item"><span class="cve-id">CVE-2025-8812</span><span class="cve-sev cve-high">HIGH</span></div>
+              <div class="cve-item"><span class="cve-id">CVE-2025-7033</span><span class="cve-sev cve-high">HIGH</span></div>
+              <div class="cve-item"><span class="cve-id">CVE-2025-6204</span><span class="cve-sev cve-med">MED</span></div>
+            </div>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>// Tags</h4>
+            <div class="tag-cloud">
+              <span class="tag-cloud-item">Exploit</span>
+              <span class="tag-cloud-item">Kernel</span>
+              <span class="tag-cloud-item">RCE</span>
+              <span class="tag-cloud-item">OSINT</span>
+              <span class="tag-cloud-item">Malware</span>
+              <span class="tag-cloud-item">C2</span>
+              <span class="tag-cloud-item">AWS</span>
+              <span class="tag-cloud-item">Python</span>
+              <span class="tag-cloud-item">PoC</span>
+              <span class="tag-cloud-item">CTF</span>
+              <span class="tag-cloud-item">AD</span>
+              <span class="tag-cloud-item">Linux</span>
+              <span class="tag-cloud-item">SIEM</span>
+              <span class="tag-cloud-item">Sigma</span>
+            </div>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>// Write for Us</h4>
+            <p style="font-size:0.82rem;color:var(--text-dim);line-height:1.65;margin-bottom:1rem;font-weight:300;">Share your security research, CTF writeups, or tool releases with the community.</p>
+            <a href="write.html" class="btn-primary" style="font-size:0.68rem;padding:0.7rem 1.25rem;">New Post →</a>
+          </div>
+
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="../js/layout.js"></script>
+  <script src="../js/blog.js"></script>
+</body>
+</html>

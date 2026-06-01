@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — HEXBREACH</title>
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <style>
+    .about-page { padding: calc(var(--header-h) + 5rem) 0 6rem; }
+
+    .about-hero { margin-bottom: 5rem; }
+    .about-hero h1 {
+      font-family: var(--display);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      color: var(--text-bright);
+      line-height: 1.05;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+      animation: fadeInUp 0.5s 0.1s both;
+    }
+    .about-hero p {
+      font-size: 1rem;
+      color: var(--text-dim);
+      font-weight: 300;
+      max-width: 560px;
+      line-height: 1.85;
+      animation: fadeInUp 0.5s 0.2s both;
+    }
+
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; margin-bottom: 5rem; }
+    .about-body p { font-size: 0.95rem; color: var(--text-dim); font-weight: 300; line-height: 1.9; margin-bottom: 1.2rem; }
+    .about-body strong { color: var(--text-bright); font-weight: 600; }
+
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-bottom: 5rem; }
+    .value-card {
+      background: var(--panel);
+      padding: 2rem 1.75rem;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.2s;
+    }
+    .value-card:hover { background: var(--bg3); }
+    .value-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0; height: 2px;
+      background: var(--glow);
+      transform: scaleX(0);
+      transition: transform 0.25s;
+    }
+    .value-card:hover::after { transform: scaleX(1); }
+    .value-icon  { font-size: 1.6rem; margin-bottom: 1rem; display: block; }
+    .value-title { font-family: var(--display); font-size: 0.78rem; font-weight: 700; color: var(--text-bright); margin-bottom: 0.6rem; letter-spacing: 0.05em; }
+    .value-body  { font-size: 0.82rem; color: var(--text-dim); line-height: 1.7; font-weight: 300; }
+
+    .cta-block {
+      border: 1px solid var(--border);
+      background: var(--panel);
+      padding: 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-block::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--glow));
+    }
+    .cta-block h2 { font-family: var(--display); font-size: 2rem; font-weight: 900; color: var(--text-bright); margin-bottom: 0.75rem; }
+    .cta-block p  { font-size: 0.95rem; color: var(--text-dim); margin-bottom: 2.5rem; font-weight: 300; }
+    .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    @media (max-width: 900px) {
+      .about-grid   { grid-template-columns: 1fr; gap: 3rem; }
+      .values-grid  { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .values-grid  { grid-template-columns: 1fr; }
+      .cta-block    { padding: 2.5rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="header-placeholder"></div>
+
+  <main class="about-page">
+    <div class="container">
+
+      <!-- HERO -->
+      <div class="about-hero">
+        <div class="section-label">// About HEXBREACH</div>
+        <h1>Built by the<br>Security Community</h1>
+        <p>HEXBREACH is an independent publishing platform for offensive and defensive security research. No ads. No SEO-bait. Just technical depth from practitioners who've been in the trenches.</p>
+      </div>
+
+      <!-- ABOUT GRID -->
+      <div class="about-grid">
+        <div class="about-body">
+          <div class="section-label">// Our Mission</div>
+          <p>The security industry has a knowledge-sharing problem. Too much research lives behind NDAs, conference paywalls, or gets buried in dense academic papers that practitioners never read.</p>
+          <p>HEXBREACH exists to change that. We're a <strong>community-first platform</strong> where researchers, pentesters, malware analysts, and blue teamers publish their work openly — detailed, technical, and without dumbing it down.</p>
+          <p>Every post goes through a light technical review by community moderators before publishing. We don't filter based on "controversial" findings — <strong>responsible disclosure is respected</strong>, and we have a clear policy on how to handle active vulnerabilities.</p>
+          <p>We believe that sharing attack techniques openly is the only way defenders ever catch up. <strong>Security through obscurity is not security.</strong></p>
+        </div>
+        <div>
+          <div class="section-label">// Platform Stats</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);margin-bottom:2rem;">
+            <div style="background:var(--panel);padding:1.5rem;text-align:center;">
+              <span style="font-family:var(--display);font-size:1.8rem;font-weight:900;color:var(--glow);display:block;margin-bottom:0.4rem;">2,847</span>
+              <span style="font-family:var(--mono);font-size:0.6rem;color:var(--text-dim);letter-spacing:0.15em;text-transform:uppercase;">Posts</span>
+            </div>
+            <div style="background:var(--panel);padding:1.5rem;text-align:center;border-left:1px solid var(--border);">
+              <span style="font-family:var(--display);font-size:1.8rem;font-weight:900;color:var(--glow);display:block;margin-bottom:0.4rem;">1,203</span>
+              <span style="font-family:var(--mono);font-size:0.6rem;color:var(--text-dim);letter-spacing:0.15em;text-transform:uppercase;">Authors</span>
+            </div>
+            <div style="background:var(--panel);padding:1.5rem;text-align:center;border-top:1px solid var(--border);">
+              <span style="font-family:var(--display);font-size:1.8rem;font-weight:900;color:var(--glow);display:block;margin-bottom:0.4rem;">94K</span>
+              <span style="font-family:var(--mono);font-size:0.6rem;color:var(--text-dim);letter-spacing:0.15em;text-transform:uppercase;">Readers/mo</span>
+            </div>
+            <div style="background:var(--panel);padding:1.5rem;text-align:center;border-top:1px solid var(--border);border-left:1px solid var(--border);">
+              <span style="font-family:var(--display);font-size:1.8rem;font-weight:900;color:var(--glow);display:block;margin-bottom:0.4rem;">312</span>
+              <span style="font-family:var(--mono);font-size:0.6rem;color:var(--text-dim);letter-spacing:0.15em;text-transform:uppercase;">CVEs Tracked</span>
+            </div>
+          </div>
+
+          <div class="section-label">// Disclosure Policy</div>
+          <div style="background:var(--panel);border:1px solid var(--border);padding:1.5rem;">
+            <p style="font-size:0.82rem;color:var(--text-dim);font-weight:300;line-height:1.75;margin-bottom:0.8rem;">We follow a <strong style="color:var(--text-bright);">90-day responsible disclosure</strong> policy for unpatched vulnerabilities. Contact us before publishing if you believe your research may affect live systems at scale.</p>
+            <p style="font-size:0.82rem;color:var(--text-dim);font-weight:300;line-height:1.75;">Anonymous submissions are accepted. We support Tor and I2P access.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- VALUES -->
+      <div class="section-label">// What We Stand For</div>
+      <div class="values-grid">
+        <div class="value-card">
+          <span class="value-icon">🔓</span>
+          <div class="value-title">Open Knowledge</div>
+          <div class="value-body">Security knowledge hoarded is security knowledge wasted. We believe in publishing technical depth openly so defenders everywhere can benefit.</div>
+        </div>
+        <div class="value-card">
+          <span class="value-icon">🛡️</span>
+          <div class="value-title">Responsible Disclosure</div>
+          <div class="value-body">We take active vulnerability disclosure seriously. Our editorial team works with authors to ensure unpatched critical vulnerabilities are handled with appropriate care.</div>
+        </div>
+        <div class="value-card">
+          <span class="value-icon">🕵️</span>
+          <div class="value-title">Anonymity Respected</div>
+          <div class="value-body">Researchers who need to stay anonymous can publish without a verified identity. We don't log IPs or share author data with third parties.</div>
+        </div>
+        <div class="value-card">
+          <span class="value-icon">📡</span>
+          <div class="value-title">No Ads, Ever</div>
+          <div class="value-body">HEXBREACH runs on community support and reader subscriptions. Zero advertising, zero affiliate links, zero vendor influence on editorial decisions.</div>
+        </div>
+        <div class="value-card">
+          <span class="value-icon">⚙️</span>
+          <div class="value-title">Technical Rigour</div>
+          <div class="value-body">Every post is reviewed for technical accuracy before publishing. We don't publish marketing-speak or unverified claims dressed as research.</div>
+        </div>
+        <div class="value-card">
+          <span class="value-icon">🌐</span>
+          <div class="value-title">Community-First</div>
+          <div class="value-body">HEXBREACH is owned by its community, not a VC-backed corporation. Decisions about the platform's direction are made with author and reader input.</div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="cta-block">
+        <div class="section-label" style="justify-content:center;margin-bottom:1.5rem;">// Join Us</div>
+        <h2>Ready to Publish?</h2>
+        <p>Your research belongs here. Share it with tens of thousands of security practitioners who will actually read it.</p>
+        <div class="cta-btns">
+          <a href="write.html" class="btn-primary">Start Writing</a>
+          <a href="blog.html"  class="btn-ghost">Browse Posts</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="../js/layout.js"></script>
+</body>
+</html>

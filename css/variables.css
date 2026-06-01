@@ -1,0 +1,245 @@
+/* ═══════════════════════════════════════════════════
+   HEXBREACH — CSS Variables & Reset
+   css/variables.css
+   ═══════════════════════════════════════════════════ */
+
+/* ─── GOOGLE FONTS ─── */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&display=swap');
+
+/* ─── DESIGN TOKENS ─── */
+:root {
+  /* Backgrounds */
+  --bg:          #030a0f;
+  --bg2:         #060f17;
+  --bg3:         #0a1622;
+  --panel:       #081420;
+
+  /* Borders */
+  --border:      #0d2a3a;
+  --border-mid:  #1a3a50;
+
+  /* Brand colours */
+  --glow:        #00ffe5;
+  --glow2:       #00b8ff;
+  --accent:      #ff003c;
+  --gold:        #ffd700;
+
+  /* Text */
+  --text:        #c8dde8;
+  --text-dim:    #4a6a7a;
+  --text-bright: #e8f4f8;
+
+  /* Fonts */
+  --mono:        'Share Tech Mono', monospace;
+  --display:     'Orbitron', sans-serif;
+  --body:        'Rajdhani', sans-serif;
+
+  /* Misc */
+  --header-h:    64px;
+  --radius:      2px;
+}
+
+/* ─── RESET ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  cursor: crosshair;
+}
+
+img  { display: block; max-width: 100%; }
+a    { color: inherit; text-decoration: none; }
+ul   { list-style: none; }
+button { font-family: inherit; cursor: pointer; }
+
+/* ─── SCANLINE OVERLAY ─── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,255,229,0.012) 2px,
+    rgba(0,255,229,0.012) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ─── NOISE TEXTURE ─── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.4;
+}
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar       { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--glow); border-radius: 2px; }
+
+/* ─── SELECTION ─── */
+::selection { background: var(--glow); color: var(--bg); }
+
+/* ─── LAYOUT HELPERS ─── */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.page-top { padding-top: calc(var(--header-h) + 5rem); }
+
+/* ─── SECTION LABEL ─── */
+.section-label {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--glow);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(0,255,229,0.3), transparent);
+}
+
+/* ─── TAGS / CHIPS ─── */
+.post-tag {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid;
+}
+.tag-red  { color: var(--accent); border-color: rgba(255,0,60,0.4);   background: rgba(255,0,60,0.08);   }
+.tag-cyan { color: var(--glow);   border-color: rgba(0,255,229,0.4);  background: rgba(0,255,229,0.06);  }
+.tag-blue { color: var(--glow2);  border-color: rgba(0,184,255,0.4);  background: rgba(0,184,255,0.06);  }
+.tag-gold { color: var(--gold);   border-color: rgba(255,215,0,0.4);  background: rgba(255,215,0,0.06);  }
+
+.post-date {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  letter-spacing: 0.1em;
+}
+
+.post-meta {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* ─── BUTTONS ─── */
+.btn-primary {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--bg);
+  background: var(--glow);
+  border: none;
+  padding: 0.9rem 2rem;
+  clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
+  transition: all 0.2s;
+  box-shadow: 0 0 24px rgba(0,255,229,0.3);
+  display: inline-block;
+}
+.btn-primary:hover {
+  background: #fff;
+  box-shadow: 0 0 40px rgba(0,255,229,0.6);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--glow);
+  background: transparent;
+  border: 1px solid rgba(0,255,229,0.3);
+  padding: 0.9rem 2rem;
+  transition: all 0.2s;
+  display: inline-block;
+}
+.btn-ghost:hover {
+  border-color: var(--glow);
+  background: rgba(0,255,229,0.08);
+}
+
+.btn-accent {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--bg);
+  background: var(--glow);
+  border: none;
+  padding: 0.45rem 1.1rem;
+  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  transition: background 0.2s;
+  display: inline-block;
+}
+.btn-accent:hover { background: var(--glow2); }
+
+/* ─── ANIMATIONS ─── */
+@keyframes blink       { 0%,100%{opacity:1} 50%{opacity:0} }
+@keyframes gridPan     { 0%{transform:translateY(0)} 100%{transform:translateY(60px)} }
+@keyframes typing      { from{width:0} to{width:100%} }
+@keyframes cursorBlink { 0%,100%{border-color:var(--glow)} 50%{border-color:transparent} }
+@keyframes pulse       { 0%,100%{box-shadow:0 0 0 0 rgba(0,255,229,0.3)} 50%{box-shadow:0 0 0 8px rgba(0,255,229,0)} }
+@keyframes fadeInUp    { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeIn      { from{opacity:0} to{opacity:1} }
+
+/* ─── CURSOR ─── */
+.editor-cursor {
+  display: inline-block;
+  width: 8px; height: 14px;
+  background: var(--glow);
+  vertical-align: middle;
+  animation: blink 1s step-end infinite;
+  margin-left: 2px;
+}
+
+/* ─── STATUS BAR ─── */
+.status-bar {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  letter-spacing: 0.1em;
+  display: flex;
+  gap: 2rem;
+  padding: 0.5rem 1rem;
+  border-top: 1px solid var(--border);
+  background: var(--bg3);
+}
+.status-ok { color: var(--glow); }
+
+/* ─── RESPONSIVE HELPERS ─── */
+@media (max-width: 900px) { nav a:not(.btn-accent) { display: none; } }
+@media (max-width: 600px) { .container { padding: 0 1.2rem; } }
