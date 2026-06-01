@@ -8,8 +8,9 @@
 (function () {
 
   /* ── Determine path depth ── */
-  const isSubpage = window.location.pathname.includes('/pages/');
-  const base = isSubpage ? '../' : './';
+const repoName = '/your-blog-name';
+const isSubpage = window.location.pathname.includes('/pages/');
+const base = isSubpage ? `${repoName}/` : `${repoName}/`;
 
   /* ────────────────────────────────────────
      BUILD HEADER
